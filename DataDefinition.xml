@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="EUC-KR" standalone="no"?>
+<!DOCTYPE ddl-list SYSTEM "DataDefinition.dtd">
+<ddl-list>
+
+<ddl id="0">
+<title>packet</title>
+<owner>dblab</owner>
+<creation-date>1452065660143</creation-date>
+<comments/>
+<attribute-format type="variable">
+<field-delimeter>\t</field-delimeter>
+<record-delimeter>\n</record-delimeter>
+<itemset is-itemset-data="false" itemset-delimeter="">
+<tid-index>0</tid-index>
+</itemset>
+</attribute-format>
+<attribute-list>
+<attribute id="1">
+<name>timestamp</name>
+<type>long</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+<attribute id="2">
+<name>protocol</name>
+<type>string</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+<attribute id="3">
+<name>src-ip</name>
+<type>string</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+<attribute id="4">
+<name>src-port</name>
+<type>string</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+<attribute id="5">
+<name>dst-ip</name>
+<type>string</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+<attribute id="6">
+<name>dsc-port</name>
+<type>integer</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+</attribute-list>
+</ddl>
+
+
+
+<ddl id="1">
+<title>sample</title>
+<owner>dblab</owner>
+<creation-date>1454048575364</creation-date>
+<comments/>
+<attribute-format type="variable">
+<field-delimeter>,</field-delimeter>
+<record-delimeter>\n</record-delimeter>
+<itemset is-itemset-data="false" itemset-delimeter=",">
+<tid-index>0</tid-index>
+</itemset>
+</attribute-format>
+<attribute-list>
+<attribute id="1">
+<name>order_num</name>
+<type>integer</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+<attribute id="2">
+<name>id</name>
+<type>string</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+<attribute id="3">
+<name>post_code</name>
+<type>string</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+<attribute id="4">
+<name>age</name>
+<type>integer</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+<attribute id="5">
+<name>ip</name>
+<type>string</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+<attribute id="6">
+<name>buy_date</name>
+<type>string</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+<attribute id="7">
+<name>total_price</name>
+<type>integer</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+<attribute id="8">
+<name>itemcode</name>
+<type>integer</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+<attribute id="9">
+<name>buy_good_count</name>
+<type>integer</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+<attribute id="10">
+<name>buy_good_price</name>
+<type>integer</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+<attribute id="11">
+<name>good_cate</name>
+<type>string</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+</attribute-list>
+</ddl>
+
+<ddl id="3">
+<title>test</title>
+<owner>dblab</owner>
+<creation-date>1454304664335</creation-date>
+<comments/>
+<attribute-format type="variable">
+<field-delimeter>;</field-delimeter>
+<record-delimeter>\n</record-delimeter>
+<itemset is-itemset-data="false" itemset-delimeter="">
+<tid-index>0</tid-index>
+</itemset>
+</attribute-format>
+<attribute-list>
+<attribute id="1">
+<name>aa</name>
+<type>string</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+</attribute-list>
+</ddl>
+
+<ddl id="4">
+<title>preprocessed</title>
+<owner>dblab</owner>
+<creation-date>1454318431640</creation-date>
+<comments/>
+<attribute-format type="variable">
+<field-delimeter>,</field-delimeter>
+<record-delimeter>\n</record-delimeter>
+<itemset is-itemset-data="false" itemset-delimeter="">
+<tid-index>0</tid-index>
+</itemset>
+</attribute-format>
+<attribute-list>
+<attribute id="1">
+<name>timestamp</name>
+<type>long</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+<attribute id="2">
+<name>id</name>
+<type>string</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+<attribute id="3">
+<name>post_num</name>
+<type>integer</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+<attribute id="4">
+<name>age</name>
+<type>integer</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+<attribute id="5">
+<name>ip</name>
+<type>string</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+</attribute-list>
+</ddl>
+<ddl id="5">
+<title>large_grouped</title>
+<owner>dblab</owner>
+<creation-date>1454463640137</creation-date>
+<comments/>
+<attribute-format type="variable">
+<field-delimeter>,</field-delimeter>
+<record-delimeter>\n</record-delimeter>
+<itemset is-itemset-data="false" itemset-delimeter="">
+<tid-index>0</tid-index>
+</itemset>
+</attribute-format>
+<attribute-list>
+<attribute id="1">
+<name>index</name>
+<type>string</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+<attribute id="2">
+<name>post_num</name>
+<type>integer</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+<attribute id="3">
+<name>ip</name>
+<type>string</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+<attribute id="4">
+<name>age</name>
+<type>integer</type>
+<allow-null>false</allow-null>
+<default-value/>
+</attribute>
+</attribute-list>
+</ddl>
+</ddl-list>

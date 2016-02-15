@@ -1,0 +1,580 @@
+{% extends "base.html" %}
+{% block route %}
+<p class="navbar-text">로그인  &nbsp;&nbsp; > &nbsp;&nbsp;  DDL선택 &nbsp;&nbsp;  > &nbsp;&nbsp;  Task선택</p>
+{% endblock %}
+{% block bodyofbody %}
+
+<style>
+	a { text-decoration:none;
+		color:black; }
+	a:hover { text-decoration:none; }
+	div:hover { text-decoration: none; }
+</style>
+  	
+
+	<div class="row" style="text-align: right;">
+	<a href="/run">
+	<button type="button" class="btn btn-primary">submit</button></div></a>
+	<div role="tabpanel">
+
+	  <!-- Nav tabs -->
+	  <ul class="nav nav-tabs" role="tablist">
+	    <li role="presentation" class="active"><a href="#1" aria-controls="1" role="tab" data-toggle="tab">삭제</a></li>
+	    <li role="presentation"><a href="#2" aria-controls="2" role="tab" data-toggle="tab">범주화</a></li>
+	    <li role="presentation"><a href="#3" aria-controls="3" role="tab" data-toggle="tab">총계</a></li>
+	    <li role="presentation"><a href="#4" aria-controls="4" role="tab" data-toggle="tab">비식별화</a></li>
+	    
+	  </ul>
+
+
+				  		
+	
+
+	  <!-- Tab panes -->
+		<div class="tab-content">
+		  <div role="tabpanel" class="tab-pane fade in active" id="1">
+		  	<div class="container">
+		  		<br><br>
+		  		<div class="panel panel-default">
+	  			  <div class="panel-body">
+				    <h4></h4>
+				    <form action="/ddl/select" method='post'>
+				    <div class="form-group">
+						    <label for="exampleInputName2">input socket</label>
+						    <input type="text" class="form-control" id="exampleInputName2" placeholder="socket 주소를 입력하세요">
+						</div>
+					<br>
+					<div class="form-group">
+						    <label for="exampleInputName2">삭제열 선택</label>
+						    
+						</div>
+				    <table class="table table-bordered" style="text-align: center;">
+				    <tr>
+				    	<td></td>
+				    	<td>
+				  		<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="timestamp"> timestamp
+						    </label>
+						</div>
+						</td>
+						<td>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="id"> id
+						    </label>
+						</div>
+						</td>
+						<td>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="post_num"> post_num
+						    </label>
+						</div>
+						</td>
+						<td>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="age"> age
+						    </label>
+						</div>
+						</td>
+						<td>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="ip"> ip
+						    </label>
+						</div>
+						</td>
+					</tr>
+					<tr>
+					<td>type</td>
+					<td>string</td>
+					<td>string</td>
+					<td>string</td>
+					<td>integer</td>
+					<td>string</td>
+					</table>
+					<br>
+					<div class="form-group">
+						    <label for="exampleInputName2">output socket</label>
+						    <input type="text" class="form-control" id="exampleInputName2" placeholder="socket 주소를 입력하세요">
+					</div>
+				  		
+						</form>
+				  </div>
+				</div>
+		  	</div>
+		  </div>
+
+		  <div role="tabpanel" class="tab-pane fade" id="2">
+		  	<div class="container">
+		  		<br><br>
+		  		<div class="panel panel-default">
+	  			  <div class="panel-body">
+				    <h4></h4>
+				    <form action="/ddl/select" method='post'>
+				    <div class="form-group">
+						    <label for="exampleInputName2">input socket</label>
+						    <input type="text" class="form-control" id="exampleInputName2" placeholder="socket 주소를 입력하세요">
+						</div>
+					<br>
+					<div class="form-group">
+						    <label for="exampleInputName2">범주화열 선택</label>
+						    
+						</div>
+				  	<table class="table table-bordered" style="text-align: center;">
+				  	<tr>
+				  		<td></td>
+				  		<td>
+				  		<div class="radio">
+						    <label>
+						      <input type="radio" name="optionsRadios" id="optionsRadios1" value="timestamp"> timestamp
+						    </label>
+						</div>
+						</td>
+						<td>
+						<div class="radio disabled">
+						    <label>
+						      <input type="radio" name="optionsRadios" id="optionsRadios2" value="id" disabled> id
+						    </label>
+						</div>
+						</td>
+						<td>
+						<div class="radio">
+						    <label>
+						      <input type="radio" name="optionsRadios" id="optionsRadios3" value="post_num"> post_num
+						    </label>
+						</div>
+						</td>
+						<td>
+						<div class="radio">
+						    <label>
+						      <input type="radio" name="optionsRadios" id="optionsRadios4" value="age"> age
+						    </label>
+						</div>
+						</td>
+						<td>
+						<div class="radio disabled">
+						    <label>
+						      <input type="radio" name="optionsRadios" id="optionsRadios5" value="ip" disabled> ip
+						    </label>
+						</div>
+						</td>
+					</tr>
+					<tr>
+						<td>type</td>
+						<td>string</td>
+						<td>string</td>
+						<td>string</td>
+						<td>integer</td>
+						<td>string</td>
+					</tr>
+					</table>
+						<br>
+						<div class="form-group">
+						    <label for="exampleInputName2">범주화 방법 입력 (정수형은 숫자로 간격입력, 문자열은 정규표현식 가능)</label>
+						    <input type="text" class="form-control" id="exampleInputName2" placeholder="숫자 혹은 정규표현식을 입력하세요">
+						</div>
+						<br>
+				  		
+				  		<div class="form-group">
+						    <label for="exampleInputName2">output socket</label>
+						    <input type="text" class="form-control" id="exampleInputName2" placeholder="socket 주소를 입력하세요">
+						</div>
+				  		
+						
+						</form>
+				  </div>
+				</div>
+			</div>
+
+
+		  </div>
+
+		  <div role="tabpanel" class="tab-pane fade" id="3">
+		  	<div class="container">
+		  		<br><br>
+		  		<div class="panel panel-default">
+	  			  <div class="panel-body">
+				    <h4></h4>
+				    <form action="/ddl/select" method='post'>
+				    <div class="form-group">
+						    <label for="exampleInputName2">input socket</label>
+						    <input type="text" class="form-control" id="exampleInputName2" placeholder="socket 주소를 입력하세요">
+						</div>
+						<br>
+					<div class="form-group">
+						    <label for="exampleInputName2">총계처리 속성 선택</label>
+						    
+						</div>
+				  	<table class="table table-bordered" style="text-align: center;">
+				    <tr>
+				    	<td></td>
+				    	<td>timestamp</td>
+						<td>id</td>
+						<td>post_num</td>
+						<td>age</td>
+						<td>ip</td>
+					</tr>
+					<tr>
+						<td>type</td>
+						<td>string</td>
+						<td>string</td>
+						<td>string</td>
+						<td>integer</td>
+						<td>string</td>
+					</tr>
+					<tr>
+					<td></td>
+					<td>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="avg"> None
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="min"> min
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="max"> max
+						    </label>
+						</div>
+					</td>
+					<td>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="avg"> None
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="min"> min
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="max"> max
+						    </label>
+						</div>
+					</td>
+					<td>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="avg"> None
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="min"> min
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="max"> max
+						    </label>
+						</div>
+					</td>
+					<td>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="avg"> None
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="avg"> avg
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="min"> min
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="max"> max
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="stddev"> stddev
+						    </label>
+						</div>
+					</td>
+					<td>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="avg"> None
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="min"> min
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="max"> max
+						    </label>
+						</div>
+					</td>
+
+					</tr>
+					</table>
+
+					<div class="form-group">
+						    <label for="exampleInputName2">grouping size</label>
+						    <input type="text" class="form-control" id="exampleInputName2" placeholder="숫자로 입력하세요">
+						</div>
+
+					<br>
+					<div class="form-group">
+						    <label for="exampleInputName2">output socket</label>
+						    <input type="text" class="form-control" id="exampleInputName2" placeholder="socket 주소를 입력하세요">
+						</div>
+				  		
+				  		
+						
+						</form>
+				  </div>
+				</div>
+			</div>
+		  </div>
+
+		  <div role="tabpanel" class="tab-pane fade" id="4">
+		  	<div class="container">
+		  		<br><br>
+		  		<div class="panel panel-default">
+	  			  <div class="panel-body">
+				    <h4></h4>
+				    <form action="/ddl/select" method='post'>
+				    <div class="form-group">
+						    <label for="exampleInputName2">input socket</label>
+						    <input type="text" class="form-control" id="exampleInputName2" placeholder="socket 주소를 입력하세요">
+						</div>
+						<br>
+
+					<div class="form-group">
+						    <label for="exampleInputName2">grouping size</label>
+						    <input type="text" class="form-control" id="exampleInputName2" placeholder="숫자로 입력하세요">
+					</div>
+					<br>
+					<div class="form-group">
+						    <label for="exampleInputName2">window size</label>
+						    <input type="text" class="form-control" id="exampleInputName2" placeholder="숫자로 입력하세요">
+					</div>
+					<br>
+					<div class="form-group">
+						    <label for="exampleInputName2">grouping 기준 속성 선택</label>
+						    
+						</div>
+				  	<table class="table table-bordered" style="text-align: center;">
+				    <tr>
+				    	<td></td>
+				    	<td>
+				  		<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="timestamp"> timestamp
+						    </label>
+						</div>
+						</td>
+						<td>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="id"> id
+						    </label>
+						</div>
+						</td>
+						<td>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="post_num"> post_num
+						    </label>
+						</div>
+						</td>
+						<td>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="age"> age
+						    </label>
+						</div>
+						</td>
+						<td>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="ip"> ip
+						    </label>
+						</div>
+						</td>
+					</tr>
+					<tr>
+					<td>type</td>
+					<td>string</td>
+					<td>string</td>
+					<td>string</td>
+					<td>integer</td>
+					<td>string</td>
+					</table>
+
+					<div class="form-group">
+						    <label for="exampleInputName2">총계처리 속성 선택</label>
+						    
+						</div>
+				  	<table class="table table-bordered" style="text-align: center;">
+				    <tr>
+				    	<td></td>
+				    	<td>timestamp</td>
+						<td>id</td>
+						<td>post_num</td>
+						<td>age</td>
+						<td>ip</td>
+					</tr>
+					<tr>
+						<td>type</td>
+						<td>string</td>
+						<td>string</td>
+						<td>string</td>
+						<td>integer</td>
+						<td>string</td>
+					</tr>
+					<tr>
+					<td></td>
+					<td>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="avg"> None
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="min"> min
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="max"> max
+						    </label>
+						</div>
+					</td>
+					<td>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="avg"> None
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="min"> min
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="max"> max
+						    </label>
+						</div>
+					</td>
+					<td>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="avg"> None
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="min"> min
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="max"> max
+						    </label>
+						</div>
+					</td>
+					<td>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="avg"> None
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="avg"> avg
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="min"> min
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="max"> max
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="stddev"> stddev
+						    </label>
+						</div>
+					</td>
+					<td>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="avg"> None
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="min"> min
+						    </label>
+						</div>
+						<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="max"> max
+						    </label>
+						</div>
+					</td>
+
+					</tr>
+					</table>
+
+					
+
+					<br>
+					<div class="form-group">
+						    <label for="exampleInputName2">output socket</label>
+						    <input type="text" class="form-control" id="exampleInputName2" placeholder="socket 주소를 입력하세요">
+						</div>
+				  		
+				  		
+						
+						</form>
+				  </div>
+				</div>
+			</div>
+		  </div>
+		  
+		</div>
+
+
+	</div>
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+{% endblock %}
+

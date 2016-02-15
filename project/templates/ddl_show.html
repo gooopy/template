@@ -1,0 +1,9 @@
+<p>{{ ddl.name }}</p>
+<p>{{ ddl.title }}</p>
+<p>{{ ddl.creation_date }}</p>
+<p>{{ ddl.field_delimeter }}</p>
+<p>{{ ddl.record_delimeter }}</p>
+<br>
+{% for attr in ddl.attributes %}
+	<p> {{ attr.id }} -- {{ attr.name }} -- {{ attr.attr_type }} </p>
+{% endfor %}

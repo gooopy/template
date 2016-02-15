@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block route %}
+<p class="navbar-text">로그인  &nbsp;&nbsp; > &nbsp;&nbsp;  DDL선택 &nbsp;&nbsp;  > &nbsp;&nbsp;  Task선택 &nbsp;&nbsp;  > &nbsp;&nbsp;  실행</p>
+{% endblock %}
+
+{% block bodyofbody %}
+
+
+  
+  
+  <div class="panel panel-default">
+      <div class="panel-body">
+           <h4>DDL & Tasks</h4>
+           <p>DDL: sample, preprocessed</p>
+           <p>Tasks:</p>
+             <li>Delete</li>
+             <li>Categorization</li>
+             <li>Aggregation</li>
+      </div>
+  </div>
+
+  <form action="/run" method='post'>
+  
+    <button type="submit" class="btn btn-primary btn-lg">RUN</button>
+    </form>
+
+    
+
+		
+
+{% endblock %}
+

@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block route %}
+<p class="navbar-text">로그인 &nbsp;&nbsp;  > &nbsp;&nbsp;  DDL생성 &nbsp;&nbsp;  >  &nbsp;&nbsp; 속성설정</p>
+{% endblock %}
+
+{% block bodyofbody %}
+  
+
+{% from "_formhelperswithnolabel.html" import render_field %}
+<form method=post action="/register_attributes">
+  <dl>
+  <input type=hidden name=ddlname value={{ ddlname }}>
+
+  <table class="table">
+  <tr>
+  	<th></th>
+  	<th>name</th>
+  	<th>type</th>
+  	<th>nullable</th>
+  	<th>default value</th>
+  </tr>
+  <tr>
+  	<td>1</td>
+  	<td>{{ render_field(form.name1) }}</td>
+    <td>{{ render_field(form.type1) }}</td>
+    <td>{{ render_field(form.nullable1) }}</td>
+    <td>{{ render_field(form.default1) }}</td>
+  </tr>
+  <tr>    
+  	<td>2</td>
+    <td>{{ render_field(form.name2) }}</td>
+    <td>{{ render_field(form.type2) }}</td>
+    <td>{{ render_field(form.nullable2) }}</td>
+    <td>{{ render_field(form.default2) }}</td>
+  </tr>
+  <tr>
+  	<td>3</td>
+    <td>{{ render_field(form.name3) }}</td>
+    <td>{{ render_field(form.type3) }}</td>
+    <td>{{ render_field(form.nullable3) }}</td>
+    <td>{{ render_field(form.default3) }}</td>
+  </tr>
+  <tr>
+  	<td>4</td>
+  	<td>{{ render_field(form.name4) }}</td>
+    <td>{{ render_field(form.type4) }}</td>
+    <td>{{ render_field(form.nullable4) }}</td>
+    <td>{{ render_field(form.default4) }}</td>
+  </tr>
+  <tr>
+  	<td>5</td>
+    <td>{{ render_field(form.name5) }}</td>
+    <td>{{ render_field(form.type5) }}</td>
+    <td>{{ render_field(form.nullable5) }}</td>
+    <td>{{ render_field(form.default5) }}</td>
+  </tr>
+  <tr>
+  	<td>6</td>
+    <td>{{ render_field(form.name6) }}</td>
+    <td>{{ render_field(form.type6) }}</td>
+    <td>{{ render_field(form.nullable6) }}</td>
+    <td>{{ render_field(form.default6) }}</td>
+  </tr>
+  <tr>
+  	<td>7</td>
+    <td>{{ render_field(form.name7) }}</td>
+    <td>{{ render_field(form.type7) }}</td>
+    <td>{{ render_field(form.nullable7) }}</td>
+    <td>{{ render_field(form.default7) }}</td>
+  </tr>
+  <tr>
+  	<td>8</td>
+    <td>{{ render_field(form.name8) }}</td>
+    <td>{{ render_field(form.type8) }}</td>
+    <td>{{ render_field(form.nullable8) }}</td>
+    <td>{{ render_field(form.default8) }}</td>
+  </tr>
+  <tr>
+  	<td>9</td>
+    <td>{{ render_field(form.name9) }}</td>
+    <td>{{ render_field(form.type9) }}</td>
+    <td>{{ render_field(form.nullable9) }}</td>
+    <td>{{ render_field(form.default9) }}</td>
+  </tr>
+  <tr>
+  	<td>10</td>
+    <td>{{ render_field(form.name10) }}</td>
+    <td>{{ render_field(form.type10) }}</td>
+    <td>{{ render_field(form.nullable10) }}</td>
+    <td>{{ render_field(form.default10) }}</td>
+  </tr>
+  <tr>
+  	<td>11</td>
+    <td>{{ render_field(form.name11) }}</td>
+    <td>{{ render_field(form.type11) }}</td>
+    <td>{{ render_field(form.nullable11) }}</td>
+    <td>{{ render_field(form.default11) }}</td>
+  </tr>
+  <tr>
+  	<td>12</td>
+    <td>{{ render_field(form.name12) }}</td>
+    <td>{{ render_field(form.type12) }}</td>
+    <td>{{ render_field(form.nullable12) }}</td>
+    <td>{{ render_field(form.default12) }}</td>
+  </tr>
+  </table>
+  
+  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  Add more attributes
+  
+  </dl>
+  <button type="submit" class="btn btn-default">Register</button>
+</form>
+
+{% endblock %}

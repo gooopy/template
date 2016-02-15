@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block route %}
+<p class="navbar-text">로그인  &nbsp;&nbsp; >  &nbsp;&nbsp; DDL생성 </p>
+{% endblock %}
+{% block bodyofbody %}
+
+
+    <a class="btn btn-default" href="/ddl/new" role="button">ddl 추가하기</a>
+    <br><br>
+
+
+
+{% from "_formhelpers.html" import render_field %}
+<form method=post action="/ddl/new">
+  <dl>
+    {{ render_field(form.title) }}
+    {{ render_field(form.field_delimeter) }}
+    {{ render_field(form.record_delimeter) }}
+  </dl>
+  <button type="submit" class="btn btn-default">Register</button>
+</form>
+
+
+
+{% endblock %}
+
+
